@@ -39,16 +39,15 @@ class Data {
   String ghichu;
 
   Data(
-    this.id,
-    this.tuyenxe,
-    this.biensoxe,
-    this.giave,
-    this.soghexe,
-    this.thoigian1,
-    this.thoigian2,
-    this.sodienthoai,
-    this.ghichu
-      );
+      {this.id,
+      this.tuyenxe,
+      this.biensoxe,
+      this.giave,
+      this.soghexe,
+      this.thoigian1,
+      this.thoigian2,
+      this.sodienthoai,
+      this.ghichu});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
