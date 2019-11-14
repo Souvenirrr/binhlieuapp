@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
   var _currentIndex = 0;
   var url = "http://lathanhhanh.tk/api/xekhach.php";
   Api api;
+  List datas;
 
   @override
   void initState() {
@@ -46,7 +47,9 @@ class _HomePageState extends State<HomePage> {
           itemCount: api.data.length,
           itemBuilder: (BuildContext context, int index){
             return ListTile(
-              title: Text(api.data.toString()),    
+              leading: Icon(Icons.desktop_mac),
+              title: Text(api.data[index].tuyenxe),
+              subtitle: Text(api.data[index].giave),    
             );
           },
         ),
@@ -58,7 +61,6 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: new Icon(Icons.home),
             title: new Text('Home'),
-
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.calendar_today),
