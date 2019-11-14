@@ -46,10 +46,17 @@ class _HomePageState extends State<HomePage> {
         ) : ListView.builder(
           itemCount: api.data.length,
           itemBuilder: (BuildContext context, int index){
-            return ListTile(
+            return ExpansionTile(
               leading: Icon(Icons.desktop_mac),
               title: Text(api.data[index].tuyenxe),
-              subtitle: Text(api.data[index].giave),    
+              children: <Widget>[
+                Text("Biển số xe: " + api.data[index].biensoxe),
+                Text("Giá vé: " + api.data[index].giave),
+                Text("Số ghế: "+ api.data[index].soghexe),
+                Text("Thời gian đi: " + api.data[index].thoigian1),
+                Text("Thời gian đến: " + api.data[index].thoigian2),
+                Text("Số điện thoại: " +api.data[index].sodienthoai),
+              ],  
             );
           },
         ),
