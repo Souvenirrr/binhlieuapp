@@ -28,15 +28,19 @@ class _HomePageState extends State<HomePage> {
   _fetchData1() async {
     var res = await http.get(url1);
     var decodeJson = jsonDecode(res.body);
-    taxiModel = TaxiModel.fromJson(decodeJson);
-    print(taxiModel.toJson());
+    setState(() {
+      taxiModel = TaxiModel.fromJson(decodeJson);
+      print(taxiModel.toJson());
+    });
   }
 
   _fetchData() async {
     var res = await http.get(url);
     var decodeJson = jsonDecode(res.body);
-    api = Api.fromJson(decodeJson);
-    print(api.toJson());
+    setState(() {
+      api = Api.fromJson(decodeJson);
+      print(api.toJson());
+    });
   }
 
   void onTabTapped(int index) {
